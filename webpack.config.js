@@ -12,5 +12,21 @@ module.exports = {
     // where to look 
     devServer:{
         contentBase: './dist'
+    },
+    module:{
+        rules:[{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use:['babel-loader']
+        },{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use:['eslint-loader']
+        }]
+    },
+    // no need to add extenstions
+    resolve:{
+        extenstions: ['.js', '.jsx']
     }
+
 }
